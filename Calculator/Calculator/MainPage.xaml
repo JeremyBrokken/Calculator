@@ -22,7 +22,7 @@
                     <Frame BackgroundColor="White" Padding="7"
                            WidthRequest="400" HeightRequest="75">
                         <Frame BackgroundColor="#000" Padding="15">
-                            <Label Text="24 + 345 + 20" TextColor="Gray" FontSize="Large" 
+                            <Label Text="9+9=81" TextColor="Gray" FontSize="Large" 
                                    HorizontalTextAlignment="End" VerticalTextAlignment="End"></Label>
                         </Frame>
                     </Frame>
@@ -30,7 +30,7 @@
                     <Frame BackgroundColor="White" Padding="7"
                            WidthRequest="400" HeightRequest="100">
                         <Frame BackgroundColor="#000" Padding="15">
-                            <Label Text="389" TextColor="White" FontSize="48" 
+                            <Label x:Name="resultText" Text="0" TextColor="White" FontSize="48" 
                                    HorizontalTextAlignment="End"></Label>
                         </Frame>
                     </Frame>
@@ -45,79 +45,97 @@
                     <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
                         <!-- First Row -->
                         <!-- C -->
-                        <Button  Text="C" BackgroundColor="black" TextColor="White" WidthRequest="50" HeightRequest="70" FontSize="Title" HorizontalOptions="FillAndExpand"
-                                BorderWidth="6" BorderColor="White"></Button>
+                        <Button x:Name="C" Text="C" BackgroundColor="black" TextColor="White" WidthRequest="50" HeightRequest="70" FontSize="Title" HorizontalOptions="FillAndExpand"
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnClear"/>
                         <!-- +\- -->
                         <Button Text="+/-" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title"  WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"/>
                         <!-- % -->
                         <Button Text="%" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title"  WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectOperator"/>
                         <!-- ÷ -->
                         <Button Text="÷" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title"  WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectOperator"/>
                     </StackLayout>
 
                     <!-- Second Row -->
                     <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
                         <!-- 7 -->
                         <Button Text="7" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand"  FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- 8 -->
                         <Button Text="8" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- 9 -->
                         <Button Text="9" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- x -->
                         <Button Text="x" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectOperator"/>
                     </StackLayout>
 
                     <!-- Third Row -->
                     <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
                         <!-- 4 -->
                         <Button Text="4" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- 5 -->
                         <Button Text="5" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- 6 -->
                         <Button Text="6" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- - -->
                         <Button  Text="-" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectOperator"/>
                     </StackLayout>
 
                     <!-- Fourth Row -->
                     <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" >
                         <!-- 1 -->
                         <Button Text="1" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- 2 -->
                         <Button Text="2" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- 3 -->
                         <Button Text="3" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- + -->
                         <Button Text="+" BackgroundColor="black" TextColor="White" HorizontalOptions="FillAndExpand" FontSize="Title" WidthRequest="50" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnSelectOperator"/>
                     </StackLayout>
 
                     <!-- Fifth Row -->
-                    <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
                         <!-- 0 -->
                         <Button Text="0" BackgroundColor="black" TextColor="White" FontSize="Title" WidthRequest="50" HeightRequest="70"
                                 BorderWidth="6" BorderColor="White" 
-                                HorizontalOptions="FillAndExpand"></Button>
+                                HorizontalOptions="FillAndExpand" CornerRadius="10"
+                                Clicked="OnSelectNumber"/>
                         <!-- . -->
                         <Button Text="." BackgroundColor="black" TextColor="White" FontSize="Title" WidthRequest="84" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
-                        <!-- =` -->
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                 Clicked="OnSelectNumber"/>
+                        <!-- = -->
                         <Button  Text="=" BackgroundColor="black" TextColor="White" FontSize="Title" WidthRequest="84" HeightRequest="70"
-                                BorderWidth="6" BorderColor="White"></Button>
+                                BorderWidth="6" BorderColor="White" CornerRadius="10"
+                                Clicked="OnCalculate"/>
                     </StackLayout>
 
                 </StackLayout>
